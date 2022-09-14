@@ -1,0 +1,13 @@
+1. Описати всю сім'ю Сімпсонів (5 персонажів)
+2. Створити компонент який описує персонажа (властивості id,name,status,species,gender,image) з цього апі
+https://rickandmortyapi.com/
+https://rickandmortyapi.com/api/character
+Створити 6 персонажів
+
+
+Resolve:
+    Data.js - Масив об'єктів 'Сімпсони'
+    Components > Simpsons > Simpson.js - 'Розмітка сторінки з даних Data.js'
+
+    Components > RickAndMorty > RickMorty.js - Отримання масиву об'єктів з апі:"https://rickandmortyapi.com/api/character"
+    Components > RickAndMorty > RickMortyMain.js - 'Розмітка сторінки з отриманих даних від RickMorty.js'
