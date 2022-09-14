@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+#root > div{
+  margin: 0 auto;
+  width: 30%;
+}
+.first{
+  background-color: antiquewhite;
+  border: 3px solid green;
+  margin-top: 10px;
+}
+.first > h2,h3{
+  border: 2px solid #61dafb;
+  text-align: center;
+  background-color: greenyellow;
+}
+.first > p{
+  text-align: center;
+  font-family: cursive,sans-serif;
+  margin: 5px;
+}
+.first > img{
+  margin-left: 60px;
+}
+
+
+.second{
+  background-color: #61dafb;
+  border: 3px solid royalblue;
+  margin-top: 10px;
+}
+.second > h2{
+  text-align: center;
+  background-color: blanchedalmond;
+}
+.second > h4{
+  text-align: center;
+  border: 1px solid greenyellow;
+  background-color: aquamarine;
+}
+.second > img{
+  width: 100%;
+}

@@ -4,10 +4,10 @@ import RickMortyMain from "./RickMortyMain";
 export default function RickMorty() {
     let [values,setValues] = useState([]);
 
-    fetch("https://rickandmortyapi.com/api/character/10,20,30,40,50,60")
+    fetch("https://rickandmortyapi.com/api/character")
         .then(response => response.json())
         .then(value => {
-            setValues(value);
+            setValues(value.results.splice(0,6));//setValues(value)
         });
 
     return(

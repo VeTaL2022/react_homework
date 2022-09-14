@@ -1,7 +1,7 @@
 export default function RickMortyMain(props){
     let {item:value} = props;
     return(
-        <div>
+        <div className='second'>
             <h2>{value.id} - {value.name}</h2>
             <h4>Status: {value.status}</h4>
             <h4>Gender: {value.gender}</h4>
