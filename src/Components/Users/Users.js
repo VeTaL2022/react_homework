@@ -18,16 +18,16 @@ export default function Users() {
 
     return (
         <div>
-            <div>
+            <div className='user'>
                 <h3>Some info about _user <ins>{user?.name}</ins>:</h3>
                 <p>
-                    Username: {user?.username} <br/>
-                    Email: {user?.email} <br/>
-                    Adress-Street: {user?.address.street} <br/>
-                    Adress-City: {user?.address.city} <br/>
-                    Phone: {user?.phone} <br/>
-                    Website: {user?.website} <br/>
-                    Company-Name: {user?.company.name}
+                    <b>Username</b>: {user?.username} <br/>
+                    <b>Email</b>: {user?.email} <br/>
+                    <b>Adress-Street</b>: {user?.address.street} <br/>
+                    <b>Adress-City</b>: {user?.address.city} <br/>
+                    <b>Phone</b>: {user?.phone} <br/>
+                    <b>Website</b>: {user?.website} <br/>
+                    <b>Company-Name</b>: {user?.company.name}
                 </p>
             </div>
 
