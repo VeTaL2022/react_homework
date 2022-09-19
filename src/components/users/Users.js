@@ -6,6 +6,8 @@ import UserChild from "./UserChild";
 
 export default function Users() {
 
+    let id = 1;
+
     let [users,setUsers] = useState([]);
     let [posts,setPosts] = useState([]);
 
@@ -13,11 +15,10 @@ export default function Users() {
         setPosts(array);
     }
 
-
-    useEffect(() => {
+    useEffect(() =>{
         getUsersAxios().then(value => setUsers(value.data));
-        getPostsAxios().then(value => setPosts(value.data));
-    },[])
+        getPostsAxios(id).then(value => setPosts(value.data));
+    },[id])
 
     // useEffect(() =>{
     //     getPostsAxios().then(value => setPosts(value.data));
@@ -28,5 +29,6 @@ export default function Users() {
         <div>
             {<UserChild item={posts}/>}
             {users.map((user,index) => (<User item={user} key={index} lift={lift}/>))}
+            {JSON.stringify(posts)}
         </div>);
 }
