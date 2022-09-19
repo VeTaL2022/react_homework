@@ -7,6 +7,6 @@ let axiosInstance = axios.create({
 export const getUsersAxios = () =>{
     return axiosInstance.get("");
 }
-export const getPostsAxios = (id) =>{
-    return axiosInstance.get('/'+id+'/posts')
+export const getPostsAxios = () =>{
+    return axiosInstance.get("1/posts");
 }
