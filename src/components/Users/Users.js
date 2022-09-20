@@ -14,7 +14,7 @@ export default function Users() {
     return(
         <div>
             <UserForm setUsers={setUsers}/>
-            {users.map((user,index) => (<User item={user} key={index} setUsers={setUsers}/>))}
+            {users.map((user,index) => (<User user={user} key={index} setUsers={setUsers}/>))}
         </div>
     );
 
