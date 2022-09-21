@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+.User{
+  width: 22%;
+  margin: 15px;
+
+  border: 4px solid blueviolet;
+  background-color: aqua;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.User > h2{
+  width: 100%;
+  text-align: center;
+  color: royalblue;
+}
+.User > button{
+  padding: 10px 25px 10px 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid greenyellow;
+}
+.Post{
+  width: 40%;
+  margin: 10px;
+  border: 4px solid green;
+  text-align: center;
+  border-radius: 20px;
+}
+.Post > h2{
+  background-color: #7799ff;
+}
+.Post > h3{
+  background-color: antiquewhite;
+}
+.Post > h4{
+  background-color: chartreuse;
+}
+.Post > p{
+  background-color: #ffa363;
+}

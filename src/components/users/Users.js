@@ -2,30 +2,24 @@ import {useEffect, useState} from "react";
 
 import {getPostsAxios, getUsersAxios} from "../../services/user.api.axios";
 import User from "./User";
+import Post from "./Post";
 
 export default function Users() {
-
-    let id=1;
 
     let [users,setUsers] = useState([]);
     let [posts,setPosts] = useState([]);
 
     let lift = (id) =>{
-        setPosts(id.id);
+        getPostsAxios(id).then(value => setPosts(value.data));
     }
 
     useEffect(() =>{
         getUsersAxios().then(value => setUsers(value.data));
     },[])
 
-    useEffect(() =>{
-        getPostsAxios(id).then(value => setPosts(value.data));
-    },[id])
-
-
     return (
         <div>
-            {JSON.stringify(posts)}
             {users.map((user,index) => (<User item={user} key={index} lift={lift}/>))}
+            {posts.map(post => (<Post item={post}/>))}
         </div>);
 }
