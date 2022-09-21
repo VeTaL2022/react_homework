@@ -1,9 +1,5 @@
 import axios from "axios";
 
-let axiosInstance = axios.create({
-    baseURL:"https://jsonplaceholder.typicode.com/users"
-});
+import {baseURL} from "../components/urls/urls";
 
-export const getUsersAxios = () =>{
-    return axiosInstance.get("");
-}
+export const axiosInstance = axios.create({baseURL});

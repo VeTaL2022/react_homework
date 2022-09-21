@@ -1,7 +1,8 @@
-import {getUsersAxios} from "./users.api.axios";
+import {axiosInstance} from "./users.api.axios";
+import {urls} from "../components/urls/urls";
 
 export const userService = {
-    getAll:()=>getUsersAxios.get(),
-    create:(user)=>getUsersAxios.post(user),
-    deleteById:(id)=>getUsersAxios.delete(`/${id}`)
+    getAll:()=>axiosInstance.get(urls.users),
+    create:(user)=>axiosInstance.post(urls.users, user),
+    deleteById:(id)=>axiosInstance.delete(`${urls.users}/${id}`)
 }

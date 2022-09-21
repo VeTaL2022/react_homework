@@ -2,6 +2,7 @@ import {userService} from "../../services/user.service";
 
 export default function User({user,setUsers}) {
     const {id,name,username,email,phone,website} = user
+
     const deleteUser = async () =>{
         await userService.deleteById(id);
         setUsers(users =>{
