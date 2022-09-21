@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import User from "./User";
 import UserForm from "./UserForm";
-import {userService} from "../../services/user.service";
+import {userService} from "../../services/user-api/user.service";
 
 export default function Users() {
 
