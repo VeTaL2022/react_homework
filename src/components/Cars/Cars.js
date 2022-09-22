@@ -7,6 +7,7 @@ import {carService} from "../../services/car-api/car.service";
 export default function Cars() {
 
     let [cars,setCars] = useState([]);
+    let [updateCar,setUpdateCar] = useState(null);
 
     useEffect(() =>{
         carService.getAll().then(value => setCars(value.data));
@@ -15,8 +16,8 @@ export default function Cars() {
 
     return(
         <div>
-            <CarForm setCar={setCars}/>
-            {cars.map((car,index) =>(<Car car={car} key={index} setCar={setCars}/>))}
+            <CarForm setCars={setCars} updateCar={updateCar} setUpdateCar={setUpdateCar}/>
+            {cars.map((car,index) =>(<Car car={car} key={index} setCar={setCars} setUpdateCar={setUpdateCar}/>))}
         </div>
     )
 

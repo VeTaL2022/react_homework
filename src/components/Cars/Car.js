@@ -1,6 +1,6 @@
 import {carService} from "../../services/car-api/car.service";
 
-export default function Car({car,setCar}) {
+export default function Car({car,setCar,setUpdateCar}) {
     const {id,model,price,year} = car;
 
     const deleteCar = async () =>{
@@ -11,7 +11,6 @@ export default function Car({car,setCar}) {
             return [...cars]
         })
     }
-
     return(
         <div>
             <hr/>
@@ -22,7 +21,8 @@ export default function Car({car,setCar}) {
                 <p>year: {year}</p>
             </div>
             <div>
-                <button onClick={() => deleteCar()}>Delete current Car</button>
+                <button onClick={() => setUpdateCar(car)}>Update</button>
+                <button onClick={() => deleteCar()}>Delete</button>
             </div>
             <hr/>
         </div>)
