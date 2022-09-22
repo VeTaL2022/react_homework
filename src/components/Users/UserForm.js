@@ -1,9 +1,11 @@
 import {useForm} from "react-hook-form";
+
+import css from './UserForm.module.css'
 import {userService} from "../../services/user-api/user.service";
 
 export default function UserForm({setUsers}) {
 
-    const {register,reset,handleSubmit, formState:{isValid,errors}} = useForm({
+    const {register,reset,handleSubmit, formState:{isValid}} = useForm({
         mode: 'all'
     });
 
@@ -19,19 +21,14 @@ export default function UserForm({setUsers}) {
     // }
 
     return(
-        <div>
+        <div className={css.UserFrom}>
             <form onSubmit={handleSubmit(submit)}>
-                <input type="text" placeholder={'name'} {...register('name', {
-                    require: {value: true, message: 'Error'}
-                })}/>
-                {
-                    errors.name && <span>{errors.name.message}</span>
-                }
-                <input type="text" placeholder={'username'} {...register('username')}/>
+                <input type="text" placeholder={'name'} {...register('name', {required:true, minLength:{value:2 , message:'min 2 ch'}})}/>
+                <input type="text" placeholder={'username'} {...register('username', {required:true, minLength:{value:3 , message:'min 3 ch'}})}/>
                 <input type="text" placeholder={'email'} {...register('email')}/>
-                <input type="text" placeholder={'phone'} {...register('phone')}/>
+                <input type="text" placeholder={'phone'} {...register('phone', {required:true, valueAsNumber:true})}/>
                 <input type="text" placeholder={'website'} {...register('website')}/>
-                <button disabled={!isValid}>Save</button>
+                <button disabled={!isValid}>Add new User</button>
             </form>
         </div>
     )

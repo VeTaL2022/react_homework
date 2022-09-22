@@ -7,8 +7,8 @@ import Comments from "./components/Comments/Comments";
 function App() {
   return (
     <div>
-      {<Users/>}
-      {/*{<Comments/>}*/}
+      {/*{<Users/>}*/}
+      {<Comments/>}
     </div>
   );
 }

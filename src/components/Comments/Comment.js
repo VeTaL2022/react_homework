@@ -1,4 +1,5 @@
 import {commentService} from "../../services/comment-api/comment.service";
+import css from './Comment.module.css'
 
 export default function Comment({comment,setComments}) {
     const {postId,id,name,email,body} = comment;
@@ -13,8 +14,7 @@ export default function Comment({comment,setComments}) {
     }
 
     return(
-        <div>
-            <hr/>
+        <div className={css.Comment}>
             <div>
                 <p>postId: {postId}</p>
                 <p>id: {id}</p>
@@ -23,9 +23,8 @@ export default function Comment({comment,setComments}) {
                 <p>body: {body}</p>
             </div>
             <div>
-                <button onClick={() => deletePost()}>Delete current comment</button>
+                <button onClick={() => deletePost()}>Delete current Comment</button>
             </div>
-            <hr/>
         </div>
     )
 

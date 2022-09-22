@@ -1,0 +1,12 @@
+.CommentForm{
+    margin: 20px;
+}
+.CommentForm > form > input{
+    border: 2px solid green;
+    margin-right: 5px;
+}
+.CommentForm > form > button{
+    background-color: #cbf3ff;
+    border: 2px solid blue;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import {axiosService} from "./users.api.axios";
-import {userURL} from "../../urls/urls";
+import {userURL} from "../../configs/urls/urls";
 
 export const userService = {
     getAll:()=>axiosService.get(userURL.users),

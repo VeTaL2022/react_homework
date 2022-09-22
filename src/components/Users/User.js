@@ -1,3 +1,4 @@
+import css from './User.module.css'
 import {userService} from "../../services/user-api/user.service";
 
 export default function User({user,setUsers}) {
@@ -14,8 +15,7 @@ export default function User({user,setUsers}) {
         })
     }
     return(
-        <div>
-            <hr/>
+        <div className={css.User}>
             <div>
                 <p>id: {id}</p>
                 <p>name: {name}</p>
@@ -25,9 +25,8 @@ export default function User({user,setUsers}) {
                 <p>website: {website}</p>
             </div>
             <div>
-                <button onClick={() => deleteUser()}>Delete</button>
+                <button onClick={() => deleteUser()}>Delete current User</button>
             </div>
-            <hr/>
         </div>
     );
 }

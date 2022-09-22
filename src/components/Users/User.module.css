@@ -1,0 +1,17 @@
+.User{
+    border: 3px solid forestgreen;
+    margin: 15px;
+    width: 30%;
+    text-align: center;
+    background-color: #61dafb;
+}
+.User > div > p{
+    border: 2px solid goldenrod;
+    background-color: greenyellow;
+}
+.User > div > button{
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+    background-color: beige;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import {axiosService} from "./comments.api.axios";
-import {commentURL} from "../../urls/urls";
+import {commentURL} from "../../configs/urls/urls";
 
 export  const commentService = {
     getAll:() => axiosService.get(commentURL.comments),

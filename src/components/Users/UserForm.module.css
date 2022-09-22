@@ -1,0 +1,12 @@
+.UserFrom{
+   margin: 20px 20px 20px 0;
+}
+.UserFrom > form > input{
+    margin-right: 10px;
+    border: 2px solid blue;
+    background-color: #cbf3ff;
+}
+.UserFrom > form > button{
+    background-color: lavender;
+    cursor: pointer;
+}

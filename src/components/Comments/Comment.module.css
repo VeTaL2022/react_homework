@@ -1,0 +1,17 @@
+.Comment{
+    width: 30%;
+    border: 3px solid deepskyblue;
+    margin: 20px;
+    text-align: center;
+    background-color: greenyellow;
+}
+.Comment > div > p{
+    border: 2px solid #61dafb;
+    background-color: bisque;
+}
+.Comment > div > button{
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #5bedef;
+    cursor: pointer;
+}
