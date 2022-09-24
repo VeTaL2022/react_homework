@@ -1,0 +1,22 @@
+.User{
+    width: 250px;
+    height: 80%;
+
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    background-color: #61dafb;
+
+    margin: 10px 14px 10px 14px;
+    text-align: center;
+}
+.User > h4{
+    background-color: beige;
+    padding: 5px 10px 0 10px;
+    font-size: 17px;
+}
+.User > button{
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}

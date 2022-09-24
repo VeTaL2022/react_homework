@@ -6,3 +6,6 @@ let axiosInstance = axios.create({
 export const getUsersAxios = () =>{
     return axiosInstance.get("");
 }
+export const getPostsAxios = (id) =>{
+    return axiosInstance.get(`/${id}/posts`);
+}
