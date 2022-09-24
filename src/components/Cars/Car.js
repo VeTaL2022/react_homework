@@ -1,4 +1,5 @@
 import {carService} from "../../services/car-api/car.service";
+import css from './Car.module.css';
 
 export default function Car({car,setCar,setUpdateCar}) {
     const {id,model,price,year} = car;
@@ -12,8 +13,7 @@ export default function Car({car,setCar,setUpdateCar}) {
         })
     }
     return(
-        <div>
-            <hr/>
+        <div className={css.Car}>
             <div>
                 <p>id: {id}</p>
                 <p>model: {model}</p>
@@ -24,7 +24,6 @@ export default function Car({car,setCar,setUpdateCar}) {
                 <button onClick={() => setUpdateCar(car)}>Update</button>
                 <button onClick={() => deleteCar()}>Delete</button>
             </div>
-            <hr/>
         </div>)
 
 }

@@ -1,0 +1,16 @@
+.Car{
+    border: 5px solid #caff76;
+    margin: 15px;
+    background-color: #61dafb;
+    width: 30%;
+    text-align: center;
+}
+.Car > div > p{
+    border: 2px solid #ba85ec;
+    background-color: bisque;
+}
+.Car > div > button{
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,14 @@
+.CarForm{
+    margin: 10px;
+    border: 3px solid #beff6a;
+    width: 40.5%;
+    background-color: aquamarine;
+}
+.CarForm > form > input{
+    margin: 5px;
+    border: 2px solid gainsboro;
+    background-color: beige;
+}
+.CarForm > form button{
+    margin-left: 5px;
+}

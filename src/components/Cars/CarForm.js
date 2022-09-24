@@ -1,18 +1,14 @@
 import {useForm} from "react-hook-form";
-
-import {carService} from "../../services/car-api/car.service";
 import {useEffect} from "react";
+
+import css from './CarForm.module.css'
+import {carService} from "../../services/car-api/car.service";
 
 export default function CarForm({setCars, updateCar,setUpdateCar}) {
 
     const {register, reset, handleSubmit, formState:{isValid},setValue} = useForm({
         mode: 'all'
     });
-
-    // const submit = (obj) =>{
-    //     carService.createCar(obj).then(({data}) => setCars(cars => [...cars, data]))
-    //     reset();
-    // }
 
     useEffect(() =>{
         if(updateCar){
@@ -39,12 +35,12 @@ export default function CarForm({setCars, updateCar,setUpdateCar}) {
     }
 
     return(
-        <div>
+        <div className={css.CarForm}>
             <form onSubmit={handleSubmit(submit)}>
                 <input type="text" placeholder={'model'} {...register('model', {required:true, minLength:{value:3, message:'minimum 3 ch'}})}/>
                 <input type="text" placeholder={'price'} {...register('price', {required:true, valueAsNumber:true})}/>
                 <input type="text" placeholder={'year'} {...register('year', {required:true, valueAsNumber:true})}/>
-                <button disabled={!isValid}>{updateCar ? 'Update' : 'Add new Car'}</button>
+                <button disabled={!isValid}>{updateCar ? 'Update' : 'add Car'}</button>
             </form>
         </div>
     )
