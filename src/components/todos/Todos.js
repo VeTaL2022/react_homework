@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 import Todo from "./Todo";
-import {todoService} from "../../services/todo.service";
+import {todoService} from "../../services/todo-service/todo.service";
 
 export default function Todos() {
 
@@ -13,6 +13,7 @@ export default function Todos() {
 
     return(
         <div>
+            <h3>All todos</h3>
             {todos.map((todo,index) => (<Todo item={todo} key={index}/>))}
         </div>
 

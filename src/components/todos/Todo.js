@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function Todo({item:todo}) {
-    
+    let navigate = useNavigate();
     return(
         <div>
-            <p>{todo.userId} - {todo.id} <button><Link to={'/todos/'+todo.id} state={{...todo}}>More Details</Link></button></p>
+            <p>id: {todo.id} <button onClick={() => navigate(todo.id.toString(), {state:{...todo}})}>More Details</button></p>
         </div>
     )
 

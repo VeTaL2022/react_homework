@@ -9,4 +9,7 @@ const albumURL = {
 const commentURL = {
     comments: "/comments"
 }
-export {baseURL,todoURL,albumURL,commentURL}
+const postURL = {
+    posts: "/posts"
+}
+export {baseURL,todoURL,albumURL,commentURL,postURL}

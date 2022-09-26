@@ -3,9 +3,10 @@ import {Routes,Route,Link} from "react-router-dom";
 
 import Home from "./components/home/Home";
 import Todos from "./components/todos/Todos";
+import TodoDetails from "./components/todos/TodoDetails";
 import Albums from "./components/albums/Albums";
 import Comments from "./components/comments/Comments";
-import TodoDetails from "./components/todos/TodoDetails";
+import Post from "./components/posts/Post";
 
 function App() {
 
@@ -21,10 +22,11 @@ function App() {
         <hr/>
         <Routes>
             <Route index element={<Home/>}/>
-            <Route path={'todos'} element={<Todos/>}></Route>
+            <Route path={'todos'} element={<Todos/>}/>
             <Route path={'todos/:id'} element={<TodoDetails/>}/>
             <Route path={'albums'} element={<Albums/>}/>
             <Route path={'comments'} element={<Comments/>}/>
+            <Route path={'posts/:id'} element={<Post/>}/>
         </Routes>
         <hr/>
     </div>
