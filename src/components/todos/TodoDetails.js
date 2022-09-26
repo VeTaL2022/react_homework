@@ -1,10 +1,11 @@
 import {useLocation} from "react-router-dom";
 
+import css from './TodoDetails.module.css'
 export default function TodoDetails() {
     let location = useLocation();
     let {state: todo} = location;
     return(
-        <div>
+        <div className={css.TodoDetails}>
             <p>userId: {todo.userId}</p>
             <p>id: {todo.id}</p>
             <p>title: {todo.title}</p>

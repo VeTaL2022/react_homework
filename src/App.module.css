@@ -1,0 +1,28 @@
+.App{
+    min-height: 100vh;
+    background-color: bisque;
+    display: flex;
+}
+.App ul{
+    width: 6%;
+    padding-left: 10px;
+    margin-right: 30px;
+}
+.App ul li{
+    border: 2px solid grey;
+    border-radius: 10px;
+    background-color: aquamarine;
+
+    padding: 5px;
+    margin-bottom: 5px;
+
+    list-style-type: none;
+    text-underline: none;
+    text-align: center;
+
+}
+.App hr{
+    width: 10px;
+    border-radius: 10px;
+    background-color: gold;
+}

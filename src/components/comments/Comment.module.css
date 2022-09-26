@@ -1,0 +1,16 @@
+.Comment{
+    border: 5px solid #c498ff;
+    border-radius: 50px;
+    background-color: lightblue;
+
+    margin-top: 15px;
+    text-align: center;
+}
+.Comment p{
+    border: 3px solid lightblue;
+    border-radius: 20px;
+    background-color: #e2ffb6;
+
+    margin: 10px;
+    font-family: cursive;
+}

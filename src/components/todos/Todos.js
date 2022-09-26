@@ -13,7 +13,6 @@ export default function Todos() {
 
     return(
         <div>
-            <h3>All todos</h3>
             {todos.map((todo,index) => (<Todo item={todo} key={index}/>))}
         </div>
 

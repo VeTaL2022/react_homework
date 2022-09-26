@@ -1,0 +1,18 @@
+.TodoDetails{
+    height: 250px;
+    border: 5px solid #ff89c2;
+    border-radius: 15px;
+    background-color: #e2ffb6;
+
+    margin-top: 50px;
+    text-align: center;
+}
+.TodoDetails p{
+    border: 3px solid greenyellow;
+    border-radius: 10px;
+    background-color: #61dafb;
+
+    padding: 5px;
+    margin: 20px;
+    font-family: cursive;
+}

@@ -1,0 +1,19 @@
+.Post{
+    max-width: 50%;
+    max-height: 290px;
+
+    border: 5px solid rebeccapurple;
+    border-radius: 40px;
+
+    margin-top: 50px;
+    text-align: center;
+}
+.Post p{
+    border: 4px solid #e2ffb6;
+    border-radius: 15px;
+    background-color: #61dafb;
+
+    padding: 10px;
+    margin: 10px;
+    font-family: cursive;
+}

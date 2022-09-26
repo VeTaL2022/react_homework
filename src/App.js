@@ -1,4 +1,5 @@
 import './App.css';
+import css from './App.module.css'
 import {Routes,Route,Link} from "react-router-dom";
 
 import Home from "./components/home/Home";
@@ -11,9 +12,9 @@ import Post from "./components/posts/Post";
 function App() {
 
   return (
-    <div>
+    <div className={css.App}>
       <ul>
-          <li><Link to={'/'}>Home Page</Link></li>
+          <li><Link to={'/'}>Home</Link></li>
           <li><Link to={'/todos'}>Todos</Link></li>
           <li><Link to={'/albums'}>Albums</Link></li>
           <li><Link to={'/comments'}>Comments</Link></li>

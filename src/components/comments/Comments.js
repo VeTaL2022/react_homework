@@ -12,7 +12,7 @@ export default function Comments() {
     },[])
 
     return(
-        <div>
+        <div style={{width:'60%'}}>
             {comments.map((comment,index) =>(<Comment item={comment} key={index}/>))}
         </div>
     )
