@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {userService} from "../../services/user-service/user-service";
+import {userService} from "../../services";
 import {User} from "./User";
 
 export function Users() {
