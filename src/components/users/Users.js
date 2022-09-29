@@ -6,7 +6,7 @@ export function Users() {
     let [users,setUsers] = useState([]);
 
     useEffect(() => {
-        userService.getUser().then(value => setUsers(value.data))
+        userService.getUser().then(({data}) => setUsers(data))
     },[]);
 
     return(
