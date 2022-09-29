@@ -9,11 +9,10 @@ function App() {
   return (
     <div>
         <Routes>
-            <Route>
-                <Route index element={<MainLayout/>}/>
+            <Route path={'/'} element={<MainLayout/>}>
                 <Route path={'users'} element={<UsersPage/>}/>
-                <Route path={'posts'} element={<PostsPage/>}></Route>
-                <Route path={'comments'} element={<CommentsPage/>}></Route>
+                <Route path={'posts'} element={<PostsPage/>}/>
+                <Route path={'comments'} element={<CommentsPage/>}/>
             </Route>
         </Routes>
     </div>
