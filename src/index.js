@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom";
 
@@ -6,11 +6,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+export let MyContext = createContext(null);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <MyContext.Provider value={{name: 'Tolya', age: 22}}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </MyContext.Provider>
 
 );
 

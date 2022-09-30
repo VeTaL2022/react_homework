@@ -1,25 +1,24 @@
 import {useLocation, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {commentService} from "../../services";
 
-import {postService} from "../../services";
-
-export function PostDetailsPage() {
+export function CommentsDetailsPage() {
 
     let {state} = useLocation();
-    let [post,setPost] = useState(state);
+    let [comment,setComment] = useState(state);
     let {id} = useParams();
 
     useEffect(() => {
         if(!state){
-            postService.getById(id).then(({data}) => setPost(data))
+            commentService.getById(id).then(({data}) => setComment(data))
         } else {
-            setPost(state)
+            setComment(state)
         }
     },[id,state])
 
     return(
         <div>
-            {post && <div>{JSON.stringify(post)}</div>}
+            {comment && <div>{JSON.stringify(comment)}</div>}
         </div>
     )
 

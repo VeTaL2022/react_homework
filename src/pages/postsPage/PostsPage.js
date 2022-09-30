@@ -4,9 +4,13 @@ import {Posts} from "../../components";
 export function PostsPage() {
 
     return(
-        <div>
-            <Posts/>
-            <Outlet/>
+        <div style={{display:'flex'}}>
+            <div>
+                <Posts/>
+            </div>
+            <div style={{width:'40%'}}>
+                <Outlet/>
+            </div>
         </div>
     )
 

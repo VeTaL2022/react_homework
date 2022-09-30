@@ -4,6 +4,7 @@ import './App.css';
 import {MainLayout} from "./layouts/MainLayout";
 import {AboutPage, HomePage, NotFoundPage, PostDetailsPage, PostsPage, UsersPage} from "./pages";
 import {CommentsPage} from "./pages/commentsPage/CommentsPage";
+import {CommentsDetailsPage} from "./pages/commentsDetailsPage/CommentsDetailsPage";
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
         <Route path={'posts'} element={<PostsPage/>}>
             <Route path={':id'} element={<PostDetailsPage/>}/>
         </Route>
-        <Route path={'comments'} element={<CommentsPage/>}/>
+        <Route path={'comments'} element={<CommentsPage/>}>
+            <Route path={':id'} element={<CommentsDetailsPage/>}/>
+        </Route>
         <Route path={'about'} element={<AboutPage/>}/>
-      </Route>
         <Route path={'*'} element={<NotFoundPage/>}/>
+      </Route>
     </Routes>
   );
 }
