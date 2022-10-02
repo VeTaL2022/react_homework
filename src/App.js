@@ -1,19 +1,9 @@
 import './App.css';
-import {Animals} from "./components";
+import {Animals} from "./components/animals/Animals";
 
 function App() {
   return (
     <div>
-        {/*<div style={{display:'flex', justifyContent:'space-evenly'}}>*/}
-        {/*    <AddCat/>*/}
-        {/*    <AddDog/>*/}
-        {/*</div>*/}
-        {/*<hr/>*/}
-        {/*<div style={{display:'flex', justifyContent:'space-around'}}>*/}
-        {/*    <ShowCat/>*/}
-        {/*    <ShowDog/>*/}
-        {/*</div>*/}
-
         <Animals/>
     </div>
   );
