@@ -1,5 +1,5 @@
 import './App.css';
-import {Animals} from "./components/animals/Animals";
+import {Animals} from "./components/Animals";
 
 function App() {
 
