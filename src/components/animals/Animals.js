@@ -6,9 +6,9 @@ let reducer = (state, action) => {
         case 'CAT':
             state.cats.push(action.payload)
             return {...state}
-        case 'DOG':
-            state.dogs.push()
-            return {...state}
+        // case 'DOG':
+        //     state.dogs.push()
+        //     return {...state}
         default:
             return {...state}
     }
@@ -24,12 +24,13 @@ export function Animals() {
             <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                 <form onSubmit={handleSubmit(reducer)}>
                     <input type="text" placeholder={'cat'} {...register('Cat')}/>
-                    <button onClick={() => dispatch({type: 'CAT', payload: 'lost'})}>Save</button>
+                    <button onClick={() => dispatch({type: 'CAT', payload: 'asshole'})}>Save</button>
                 </form>
-                <form onSubmit={handleSubmit(reducer)}>
-                    <input type="text" placeholder={'dog'} {...register('Dog')}/>
-                    <button onClick={() => dispatch({type: 'DOG'})}>Save</button>
-                </form>
+
+                {/*<form onSubmit={handleSubmit(reducer)}>*/}
+                {/*    <input type="text" placeholder={'dog'} {...register('Dog')}/>*/}
+                {/*    <button onClick={() => dispatch({type: 'DOG'})}>Save</button>*/}
+                {/*</form>*/}
             </div>
 
             <hr/>
