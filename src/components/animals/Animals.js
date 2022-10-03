@@ -1,45 +1,55 @@
-import {useReducer} from "react";
-import {useForm} from "react-hook-form";
+import {useRef} from "react";
 
-let reducer = (state, action) => {
-    switch (action.type) {
-        case 'CAT':
-            state.cats.push(action.payload)
-            return {...state}
-        // case 'DOG':
-        //     state.dogs.push()
-        //     return {...state}
-        default:
-            return {...state}
-    }
-}
+import {useAnimalsReducer} from "../reducer/reducer";
+import {Cat} from "../cat/Cat";
+import {Dog} from "../dog/Dog";
+import css from './Animals.module.css'
+
 export function Animals() {
-    let [state, dispatch] = useReducer(reducer, {cats: [], dogs: []});
-    let {register, handleSubmit} = useForm();
-    console.log(state);
 
-    return (
-        <div>
+    const catRef = useRef();
+    const dogRef = useRef();
 
-            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                <form onSubmit={handleSubmit(reducer)}>
-                    <input type="text" placeholder={'cat'} {...register('Cat')}/>
-                    <button onClick={() => dispatch({type: 'CAT', payload: 'asshole'})}>Save</button>
-                </form>
+    const [state, dispatch] = useAnimalsReducer();
 
-                {/*<form onSubmit={handleSubmit(reducer)}>*/}
-                {/*    <input type="text" placeholder={'dog'} {...register('Dog')}/>*/}
-                {/*    <button onClick={() => dispatch({type: 'DOG'})}>Save</button>*/}
-                {/*</form>*/}
+    const addCat = () =>{
+        const {value} = catRef.current;
+        dispatch({type: 'addCat', payload: value});
+        catRef.current.value = '';
+    }
+
+    const addDog = () =>{
+        const {value} = dogRef.current;
+        dispatch({type: 'addDog', payload: value});
+        dogRef.current.value = '';
+    }
+
+    return(
+        <div className={css.Animals}>
+
+            <div>
+                <div>
+                    Add Cat: <input type='text' ref={catRef}/>
+                    <button onClick={addCat}>Save</button>
+                </div>
+                <div>
+                    Add Dog: <input type='text' ref={dogRef}/>
+                    <button onClick={addDog}>Save</button>
+                </div>
             </div>
 
             <hr/>
 
-            {/*<div style={{display:'flex', justifyContent:'space-evenly'}}>*/}
-            {/*    <p>{JSON.stringify(state)}</p>*/}
-            {/*    /!*<p>Cat: {state.cats}</p>*!/*/}
-            {/*    /!*<p>Dog: {state.dogs}</p>*!/*/}
-            {/*</div>*/}
+            <div className={'body'}>
+                <div>
+                    {state.cats.map((cat, index) =>
+                        (<Cat item={cat} key={index} dispatch={dispatch}/>))}
+                </div>
+                <div>
+                    {state.dogs.map((dog, index) =>
+                        (<Dog item={dog} key={index} dispatch={dispatch}/>))}
+                </div>
+            </div>
 
         </div>
     )
