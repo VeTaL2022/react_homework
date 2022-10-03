@@ -2,37 +2,47 @@ import {useRef} from "react";
 import {useAnimalReducer} from "./reducer";
 
 export function Animals() {
-    let cat = useRef();
-    let dog = useRef();
+    let catRef = useRef();
+    let dogRef = useRef();
 
     let [catState, catDispatch] = useAnimalReducer([]);
     let [dogState, dogDispatch] = useAnimalReducer([]);
 
 
     let addCat = () =>{
-        const {value} = cat.current;
+        const {value} = catRef.current;
         catDispatch({type: 'Add', payload: {name: value}})
     }
     let addDog = () =>{
-        const {value} = dog.current;
+        const {value} = dogRef.current;
         dogDispatch({type: 'Add', payload: {name: value}})
     }
+
     return(
         <div>
+
             <div style={{display:'flex', justifyContent:'space-evenly'}}>
                 <div>
-                    <input type='text' ref={cat}/>
+                    Add Cat: <input type='text' ref={catRef}/>
                     <button onClick={addCat}>Save</button>
                 </div>
                 <div>
-                    <input type='text' ref={dog}/>
+                    Add Dog: <input type='text' ref={dogRef}/>
                     <button onClick={addDog}>Save</button>
                 </div>
             </div>
+
             <hr/>
-            <p>Cat: {catState.map(cat => <span>{cat.name}</span>)}</p>
-            <p>Dog: {dogState.map(dog => <span>{dog.name}</span>)}</p>
+
+            <div style={{display:'flex' , justifyContent:'space-evenly'}}>
+                <div>
+                    {catState.map((cat, index) => <p>{cat.name} <button>Delete</button></p>)}
+                </div>
+                <div>
+                    {dogState.map((dog, index) => <p>{dog.name} <button>Delete</button></p>)}
+                </div>
+            </div>
+
         </div>
     )
-
 }
