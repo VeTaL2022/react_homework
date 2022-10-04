@@ -1,0 +1,20 @@
+.CarForm{
+    height: 60px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+}
+.CarForm > form{
+    padding: 8px;
+    background-color: #0d7c7c;
+    border-radius: 10px;
+}
+.CarForm > form > input{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+}
+.CarForm > form > button{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+    cursor: pointer;
+}

@@ -29,7 +29,6 @@ export function CarPage() {
     return (
         <div>
             <CarForm setCars={setCars}/>
-            <hr/>
             <Cars cars={cars} setCars={setCars}/>
             <button disabled={!prev} onClick={Prev}>Prev</button>
             <button disabled={!next} onClick={Next}>Next</button>

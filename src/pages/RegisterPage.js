@@ -3,6 +3,8 @@ import {authService} from "../services";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
+import css from './RegisterPage.module.css';
+
 export function RegisterPage() {
 
     const {handleSubmit, register} = useForm();
@@ -19,12 +21,14 @@ export function RegisterPage() {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            {error && <h3>{error}</h3>}
-            <input type="text" placeholder={'username'} {...register('username')}/>
-            <input type="text" placeholder={'password'} {...register('password')}/>
-            <button>Register</button>
-        </form>
+        <div className={css.RegisterPage}>
+            <form onSubmit={handleSubmit(submit)}>
+                {error && <h3>{error}</h3>}
+                <input type="text" placeholder={'username'} {...register('username')}/>
+                <input type="text" placeholder={'password'} {...register('password')}/>
+                <button>Register</button>
+            </form>
+        </div>
     )
 
 }

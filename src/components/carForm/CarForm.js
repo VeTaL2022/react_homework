@@ -1,5 +1,7 @@
 import {useForm} from "react-hook-form";
+
 import {carService} from "../../services";
+import css from './CarForm.module.css';
 
 export function CarForm({setCars}) {
     const {handleSubmit, register, reset, formState:{isValid}} = useForm({
@@ -13,7 +15,7 @@ export function CarForm({setCars}) {
     }
 
     return(
-        <div>
+        <div className={css.CarForm}>
             <form onSubmit={handleSubmit(submit)}>
                 <input type="text" placeholder={'model'} {...register('model')}/>
                 <input type="text" placeholder={'price'} {...register('price', {required: true, valueAsNumber: true})}/>

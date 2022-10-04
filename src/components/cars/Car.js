@@ -1,4 +1,5 @@
 import {carService} from "../../services";
+import css from './Car.module.css';
 
 export function Car({car, setCars}) {
     const {id, model, price, year, photo} = car;
@@ -27,18 +28,19 @@ export function Car({car, setCars}) {
     }
 
     return (
-        <div>
+        <div className={css.Car}>
             <p>id: {id}</p>
             <p>model: {model}</p>
             <p>price: {price}</p>
             <p>year: {year}</p>
             {photo ?
-                <img style={{width:'300px', height:'200px'}} src={photo} alt={model}/>
+                <img src={photo} alt={model}/>
                 :
                 <input type="file" onChange={sendPhoto}/>
             }
-            <button onClick={() => deleteCar()}>Delete Car</button>
-            <hr/>
+            <p>
+                <button onClick={() => deleteCar()}>Delete Car</button>
+            </p>
         </div>
     )
 

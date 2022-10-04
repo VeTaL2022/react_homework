@@ -1,6 +1,8 @@
 import {useForm} from "react-hook-form";
-import {authService} from "../services";
 import {useNavigate, useSearchParams} from "react-router-dom";
+
+import {authService} from "../services";
+import css from './LoginPage.module.css'
 
 export function LoginPage() {
 
@@ -18,8 +20,8 @@ export function LoginPage() {
         }
     };
     return (
-        <div>
-            {query.has('expSession') && <h2>Session End!</h2>}
+        <div className={css.LoginPage}>
+            {query.has('expSession') && <h2>Session has been Expired!</h2>}
             <form onSubmit={handleSubmit(submit)}>
                 <input type="text" placeholder={'username'} {...register('username')}/>
                 <input type="text" placeholder={'password'} {...register('password')}/>

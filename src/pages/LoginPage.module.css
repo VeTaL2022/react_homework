@@ -1,0 +1,28 @@
+.LoginPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    /*margin: 10px;*/
+    background-color: greenyellow;
+}
+.LoginPage > form{
+    /*padding: 4px 8px 4px 8px;*/
+    border: 2px solid blueviolet;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 50px;
+}
+.LoginPage > form > button{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.LoginPage > form > input{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+}
+.LoginPage > h2{
+    margin-right: 20px;
+    font-family: cursive;
+}

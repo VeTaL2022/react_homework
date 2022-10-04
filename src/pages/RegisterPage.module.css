@@ -1,0 +1,28 @@
+.RegisterPage{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100px;
+    /*margin: 10px;*/
+    background-color: aqua;
+}
+.RegisterPage > form{
+    /*padding: 4px 8px 4px 8px;*/
+    border: 2px solid darkslateblue;
+    background-color: blanchedalmond;
+    padding: 10px;
+    border-radius: 50px;
+}
+.RegisterPage > form > button{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.RegisterPage > form > input{
+    padding: 3px 6px 3px 6px;
+    font-family: cursive;
+}
+.RegisterPage > form >h3{
+    text-align: center;
+    font-family: cursive;
+}
