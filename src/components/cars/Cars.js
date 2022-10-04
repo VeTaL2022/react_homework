@@ -1,8 +1,10 @@
-export function Cars() {
+import {Car} from "./Car";
+
+export function Cars({cars, setCars}) {
     
     return(
         <div>
-            Cars
+            {cars.map((car, index) => <Car car={car} key={index} setCars={setCars}/>)}
         </div>
     )
 
