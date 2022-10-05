@@ -1,8 +1,8 @@
-export function User() {
+export function User({item:user}) {
 
     return(
         <div>
-            User
+            {JSON.stringify(user)}
         </div>
     )
 

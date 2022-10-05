@@ -1,8 +1,8 @@
-export function Post() {
+export function Post({item:post}) {
 
     return(
         <div>
-            Post
+            {JSON.stringify(post)}
         </div>
     )
 

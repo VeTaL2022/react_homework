@@ -1,8 +1,8 @@
-export function Comment() {
+export function Comment({item:comment}) {
 
     return(
         <div>
-            Comment
+            {JSON.stringify(comment)}
         </div>
     )
 
