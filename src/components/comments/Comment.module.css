@@ -1,0 +1,9 @@
+.Comment{
+    background-color: chartreuse;
+    margin: 40px;
+    font-family: cursive;
+    border: 5px solid khaki;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}

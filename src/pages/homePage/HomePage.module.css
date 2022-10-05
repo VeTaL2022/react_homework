@@ -1,0 +1,9 @@
+.HomePage{
+    background-color: #e8e5c9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.HomePage h2{
+    font-family: cursive;
+}

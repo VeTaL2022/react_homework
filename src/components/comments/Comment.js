@@ -1,7 +1,9 @@
+import css from './Comment.module.css';
+
 export function Comment({item:comment}) {
 
     return(
-        <div>
+        <div className={css.Comment}>
             {JSON.stringify(comment)}
         </div>
     )
