@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useEffect} from "react";
 
 import css from './CarForm.module.css'
-import {carService} from "../../services/car-api/car.service";
+import {carService} from "../../services/car.service";
 
 export default function CarForm({setCars, updateCar,setUpdateCar}) {
 

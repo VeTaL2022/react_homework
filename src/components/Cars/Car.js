@@ -1,4 +1,4 @@
-import {carService} from "../../services/car-api/car.service";
+import {carService} from "../../services/car.service";
 import css from './Car.module.css';
 
 export default function Car({car,setCar,setUpdateCar}) {

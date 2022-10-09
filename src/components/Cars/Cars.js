@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import Car from "./Car";
 import CarForm from "./CarForm";
-import {carService} from "../../services/car-api/car.service";
+import {carService} from "../../services/car.service";
 
 export default function Cars() {
 

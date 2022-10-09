@@ -1,6 +1,6 @@
 const baseURL = "http://owu.linkpc.net/api/v2";
 
-const carURL = {
+const urls = {
     cars: '/cars'
 }
-export {baseURL,carURL}
+export {baseURL, urls}
