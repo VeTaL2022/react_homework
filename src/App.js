@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Header/>
-      <div>
+      <div style={{display:'flex', justifyContent:'space-around'}}>
         <Users/>
         <Posts/>
       </div>
