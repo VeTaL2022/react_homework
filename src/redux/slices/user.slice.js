@@ -7,7 +7,6 @@ const initialState = {
     currentUser: null,
     loading: false,
     error: null,
-    userFromApi: null
 };
 
 const getAllUsers = createAsyncThunk(
@@ -22,24 +21,12 @@ const getAllUsers = createAsyncThunk(
     }
 );
 
-const getUserById = createAsyncThunk(
-    'userSlice/getUserById',
-    async ({id}, {rejectWithValue}) => {
-        try {
-            const {data} = await userService.getById(id);
-            return data;
-        } catch (e) {
-            return rejectWithValue(e.response.data);
-        }
-    }
-);
-
 const userSlice = createSlice({
     name: 'userSlice',
     initialState,
     reducers: {
         setCurrentUser: (state, action) => {
-            state.currentUser = action.payload
+            state.currentUser = action.payload;
         },
         deleteUserById: (state, action) => {
             const index = state.users.findIndex(user => user.id === action.payload);
@@ -47,11 +34,7 @@ const userSlice = createSlice({
             console.log(current(state.users));
         }
     },
-    // extraReducers: {
-    //     [getAllUsers.fulfilled]: (state, action) => {
-    //         state.users = action.payload
-    //     }
-    // }
+
     extraReducers: builder =>
         builder
             .addCase(getAllUsers.fulfilled, (state, action) => {
@@ -65,9 +48,6 @@ const userSlice = createSlice({
             .addCase(getAllUsers.pending, (state, action) => {
                 state.loading = true;
             })
-            .addCase(getUserById.fulfilled, (state, action) => {
-                state.userFromApi = action.payload;
-            })
 });
 
 const {reducer: userReducer, actions: {setCurrentUser, deleteUserById}} = userSlice;
@@ -75,8 +55,7 @@ const {reducer: userReducer, actions: {setCurrentUser, deleteUserById}} = userSl
 const userActions = {
     getAllUsers,
     setCurrentUser,
-    getUserById,
     deleteUserById
 }
 
-export {userReducer, userActions}
+export {userReducer, userActions};

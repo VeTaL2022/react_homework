@@ -4,10 +4,16 @@ import {useSelector} from "react-redux";
 export function Header() {
 
     const {currentUser} = useSelector(state => state.userReducer);
+    const {currentPost} = useSelector(state => state.postReducer);
 
-    return(
+    return (
         <div className={css.Header}>
-            {currentUser && currentUser.name}
+            <span>
+                {currentUser && currentUser.name}
+            </span>
+            <span>
+                {currentPost && currentPost.title}
+            </span>
         </div>
     )
 

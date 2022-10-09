@@ -1,11 +1,11 @@
-import {Header, Posts, Users} from "./components";
 import './App.css';
+import {Header, Posts, Users} from "./components";
 
 function App() {
   return (
     <div>
       <Header/>
-      <div style={{display:'flex', justifyContent:'space-around'}}>
+      <div className={'app'}>
         <Users/>
         <Posts/>
       </div>

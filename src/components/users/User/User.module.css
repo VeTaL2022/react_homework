@@ -1,0 +1,21 @@
+.User{
+    background-color: lightblue;
+    border: 3px solid firebrick;
+    border-radius: 12px;
+
+    text-align: center;
+    margin-top: 10px;
+    font-family: cursive;
+}
+.User div{
+    background-color: #61dafb;
+    border: 2px solid #61dafb;
+    border-radius: 15px;
+}
+.User div, button{
+    margin: 8px;
+}
+.User button{
+    padding: 4px 7px 4px 7px;
+    cursor: pointer;
+}
