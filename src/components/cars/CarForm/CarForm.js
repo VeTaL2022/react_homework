@@ -2,9 +2,9 @@ import {useForm} from "react-hook-form";
 import {useEffect} from "react";
 
 import css from './CarForm.module.css'
-import {carService} from "../../services/car.service";
+import {carService} from "../../../services";
 
-export default function CarForm({setCars, updateCar,setUpdateCar}) {
+export function CarForm({setCars, updateCar,setUpdateCar}) {
 
     const {register, reset, handleSubmit, formState:{isValid},setValue} = useForm({
         mode: 'all'
