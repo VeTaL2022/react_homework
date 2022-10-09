@@ -17,7 +17,7 @@ export function Car({car}) {
                 <p>year: {year}</p>
             </div>
             <button>Update</button>
-            <button onClick={() => dispatch(carActions.deleteCarById(id))}>Delete</button>
+            <button onClick={() => dispatch(carActions.deleteCar({id}))}>Delete</button>
         </div>)
 
 }

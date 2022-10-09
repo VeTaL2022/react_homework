@@ -11,7 +11,7 @@ export function Cars() {
 
     useEffect(() =>{
         carDispatch(carActions.getAllCars());
-    });
+    },[carDispatch]);
 
     return(
         <div>

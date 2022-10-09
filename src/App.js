@@ -4,7 +4,7 @@ import {CarForm, Cars} from "./components/cars";
 function App() {
     return (
         <div>
-            {/*<CarForm/>*/}
+            <CarForm/>
             <Cars/>
         </div>
     );
