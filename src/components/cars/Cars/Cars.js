@@ -9,13 +9,13 @@ export function Cars() {
     const carDispatch = useDispatch();
     const {cars} = useSelector(state => state.carReducer);
 
-    useEffect(() =>{
+    useEffect(() => {
         carDispatch(carActions.getAllCars());
-    },[carDispatch]);
+    }, [carDispatch]);
 
-    return(
+    return (
         <div>
-            {cars.map((car,index) =>(<Car car={car} key={index}/>))}
+            {cars.map((car, index) => (<Car car={car} key={index}/>))}
         </div>
     )
 

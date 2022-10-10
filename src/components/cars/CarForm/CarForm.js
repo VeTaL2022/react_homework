@@ -8,21 +8,21 @@ import {carActions} from "../../../redux";
 export function CarForm() {
     const {register, reset, handleSubmit, setValue} = useForm({mode: 'all'});
 
-    const {setUpdate} = useSelector(state => state.carReducer);
+    const {update} = useSelector(state => state.carReducer);
 
     useEffect(() => {
-        if (setUpdate) {
-            setValue('model', setUpdate.model, {shouldValidate: true});
-            setValue('price', setUpdate.model, {shouldValidate: true});
-            setValue('year', setUpdate.year, {shouldValidate: true});
+        if (update) {
+            setValue('model', update.model, {shouldValidate: true});
+            setValue('price', update.model, {shouldValidate: true});
+            setValue('year', update.year, {shouldValidate: true});
         }
-    }, [setUpdate, setValue]);
+    }, [update, setValue]);
 
     const dispatch = useDispatch();
 
     const submit = (data) => {
-        if (setUpdate) {
-            dispatch(carActions.updateCar({id: setUpdate.id, car: data}));
+        if (update) {
+            dispatch(carActions.updateCar({id: update.id, car: data}));
         } else {
             dispatch(carActions.createCar({car: data}))
         }
@@ -35,7 +35,7 @@ export function CarForm() {
                 <input type='text' placeholder='model' {...register('model')}/>
                 <input type='text' placeholder='price' {...register('price')}/>
                 <input type='text' placeholder='year' {...register('year')}/>
-                <button>{setUpdate ? 'Update' : 'Add'}</button>
+                <button>{update ? 'Update' : 'Add'}</button>
             </form>
 
         </div>
