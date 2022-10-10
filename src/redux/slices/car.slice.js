@@ -4,7 +4,7 @@ import {carService} from "../../services";
 
 const initialState = {
     cars: [],
-    currentCar: null
+    update: null
 };
 
 const getAllCars = createAsyncThunk(
@@ -18,17 +18,7 @@ const getAllCars = createAsyncThunk(
         }
     }
 );
-const deleteCar = createAsyncThunk(
-    'carSlice/deleteCar',
-    async ({id}, {rejectWithValue}) => {
-        try {
-            await carService.deleteById(id);
-            return id;
-        } catch (e) {
-            rejectWithValue(e.response.data);
-        }
-    }
-);
+
 const createCar = createAsyncThunk(
     'carSlice/createCar',
     async ({car}, {rejectWithValue}) => {
@@ -41,17 +31,37 @@ const createCar = createAsyncThunk(
     }
 );
 
+const updateCar = createAsyncThunk(
+    'carSlice/updateCar',
+    async ({id, car}, {rejectWithValue}) => {
+        try {
+            const {data} = await carService.updateById(id, car);
+            return data;
+        } catch (e) {
+            rejectWithValue(e.response.data);
+        }
+    }
+);
+
+const deleteCar = createAsyncThunk(
+    'carSlice/deleteCar',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            await carService.deleteById(id);
+            return id;
+        } catch (e) {
+            rejectWithValue(e.response.data);
+        }
+    }
+);
+
 const carSlice = createSlice({
     name: 'carSlice',
     initialState,
     reducers: {
-        setCurrentCar: (state, action) => {
-            state.currentCar = action.payload;
-        },
-        // deleteCarById: (state, action) => {
-        //     const index = state.cars.findIndex(car => car.id === action.payload);
-        //     state.cars.splice(index, 1);
-        // }
+        setUpdate: (state, action) => {
+            state.update = action.payload;
+        }
     },
 
     extraReducers: builder =>
@@ -59,23 +69,28 @@ const carSlice = createSlice({
             .addCase(getAllCars.fulfilled, (state, action) => {
                 state.cars = action.payload;
             })
+            .addCase(createCar.fulfilled, (state, action) => {
+                state.cars = [...state.cars, action.payload]
+            })
+            .addCase(updateCar.fulfilled, (state, action) => {
+                const index = state.cars.findIndex(car => car.id === action.payload.id);
+                state.cars[index] = action.payload;
+            })
             .addCase(deleteCar.fulfilled, (state, action) => {
                 const index = state.cars.findIndex(car => car.id === action.payload);
-                if (index !== -1) state.cars.splice(index, 1);
-            })
-            .addCase(createCar.fulfilled, (state, action) => {
-                state.cars = [...state.cars,action.payload]
+                state.cars.splice(index, 1);
             })
 });
 
-const {reducer: carReducer, actions: {setCurrentCar}} = carSlice;
+const {reducer: carReducer, actions: {setUpdate}} = carSlice;
 
 const carActions = {
+    setUpdate,
+
     getAllCars,
-    setCurrentCar,
-    // deleteCarById
+    createCar,
+    updateCar,
     deleteCar,
-    createCar
 }
 
 export {carReducer, carActions};
