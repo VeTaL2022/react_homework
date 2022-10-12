@@ -5,7 +5,7 @@ export interface IShip {
         site_name_long: string;
     },
     links: {
-        article_link: null;
+        article_link: null | string;
         video_link: string;
     },
     rocket: {
@@ -16,7 +16,7 @@ export interface IShip {
                     flight: number;
                     core: {
                         reuse_count: number;
-                        status: string;
+                        status: string | unknown | boolean;
                     }
                 }
             ]
