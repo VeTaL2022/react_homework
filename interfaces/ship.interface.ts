@@ -1,3 +1,17 @@
+interface ICore {
+    flight: number;
+    core: {
+        reuse_count: number;
+        status: string | unknown | boolean;
+    }
+}
+
+interface IPayload {
+    payload_type: string;
+    payload_mass_kg: number;
+    payload_mass_lbs: number;
+}
+
 export interface IShip {
     mission_name: string;
     launch_date_local: string;
@@ -11,24 +25,10 @@ export interface IShip {
     rocket: {
         rocket_name: string;
         first_stage: {
-            cores: [
-                {
-                    flight: number;
-                    core: {
-                        reuse_count: number;
-                        status: string | unknown | boolean;
-                    }
-                }
-            ]
+            cores: ICore[]
         },
         second_stage: {
-            payloads: [
-                {
-                    payload_type: string;
-                    payload_mass_kg: number;
-                    payload_mass_lbs: number;
-                }
-            ]
+            payloads: IPayload[]
         }
     }
 }
