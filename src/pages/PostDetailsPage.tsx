@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
 import {IPost} from "../interfaces";
-import {useAppLocations} from "../hooks/router.hook";
+import {useAppLocations} from "../hooks";
 import {postService} from "../services";
 
 export const PostDetailsPage: FC = () => {
